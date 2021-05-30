@@ -1,6 +1,6 @@
 package com.example.openweatherapiapp.view.core;
 
-import java.awt.*;
+import com.example.openweatherapiapp.view.core.MenuItem;
 import java.util.ArrayList;
 import java.util.List;
 

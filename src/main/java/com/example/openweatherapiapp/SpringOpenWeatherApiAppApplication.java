@@ -14,11 +14,13 @@ public class SpringOpenWeatherApiAppApplication implements CommandLineRunner {
     public SpringOpenWeatherApiAppApplication(WeatherService weatherService) {
         controller = new WeatherController(weatherService);
     }
+
     public static void main(String[] args) {
         SpringApplication.run(SpringOpenWeatherApiAppApplication.class, args);
     }
+
     @Override
-    public void run(String...args) throws Exception {
+    public void run(String... args) throws Exception {
         controller.start();
     }
 

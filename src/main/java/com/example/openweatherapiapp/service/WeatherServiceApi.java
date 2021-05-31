@@ -15,10 +15,13 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class WeatherServiceApi implements WeatherService{
+public class WeatherServiceApi implements WeatherService {
+
     public static void main(String[] args) throws URISyntaxException, IOException, InterruptedException {
 
-        URI uri = new URI("http://api.openweathermap.org/data/2.5/weather?q={city}&appid=fd071cbcdf68906fb0cfc616df57cfd1&units=metric&lang=pl"),
+        URI uri = new URI("http://api.openweathermap.org/data/2.5/weather?q=" +
+                city +
+                "&appid=fd071cbcdf68906fb0cfc616df57cfd1&units=metric&lang=pl"),
                 city;
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()

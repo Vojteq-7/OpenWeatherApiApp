@@ -29,7 +29,7 @@ public class WeatherController {
                 () -> {
                     GetCityNameFromConsole cityGet = new GetCityNameFromConsole(input);
                     String city = cityGet.AsForNameCity();
-                    WeatherServiceApi printWeather = new WeatherServiceApi();
+
 
                 }
         ));

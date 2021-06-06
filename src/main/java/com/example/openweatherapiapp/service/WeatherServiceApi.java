@@ -1,6 +1,7 @@
 package com.example.openweatherapiapp.service;
 
 import com.example.openweatherapiapp.domain.CityName;
+import com.example.openweatherapiapp.view.domain.GetCityNameFromConsole;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,10 +20,11 @@ public class WeatherServiceApi implements WeatherService {
 
     public static void main(String[] args) throws URISyntaxException, IOException, InterruptedException {
 
+        String city = new String();
         URI uri = new URI("http://api.openweathermap.org/data/2.5/weather?q=" +
                 city +
-                "&appid=fd071cbcdf68906fb0cfc616df57cfd1&units=metric&lang=pl"),
-                city;
+                "&appid=fd071cbcdf68906fb0cfc616df57cfd1&units=metric&lang=pl")
+        ;
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()
                 .uri(uri)
@@ -31,16 +33,11 @@ public class WeatherServiceApi implements WeatherService {
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         System.out.println(response.body());
     }
-
-
     @Override
     public void FindWeatherByCityName(CityName cityName) {
-
     }
-
     @Override
     public Optional<CityName> findByName(String city) {
         return Optional.empty();
     }
-
 }
